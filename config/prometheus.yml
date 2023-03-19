@@ -1,0 +1,10 @@
+scrape_configs: 			# 수집대상에 대한 설정
+  - job_name: 'prometheus'  # job 이름
+    scrape_interval: 3s	    # 수집 간격
+    scrape_timeout: 1s      # 수집 안되는 경우 타임 아웃
+    static_configs:         # 대상에 대한 설정
+    - targets:
+      - pushgateway:9091
+    basic_auth:
+      username: <id>
+      password: <pw>
